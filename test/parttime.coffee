@@ -47,7 +47,7 @@ describe 'parser', ->
 		(-> PartTime.parse('42')).should.throw /Invalid/
 		(-> PartTime.parse('12:*:45.*')).should.throw /two part/
 
-describe 'compare', ->
+describe 'constructor', ->
 	it 'should work with no arguments', ->
 		(-> p = new PartTime()).should.not.throw()
 	it 'should work with an argument', ->
