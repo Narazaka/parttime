@@ -49,7 +49,8 @@ if(pt.compare(now) == 0) console.log(&#39;Happy New Year!&#39;);
 <h3 id="class-parttime">class PartTime</h3>
 <h4 id="constructor-timestring-">constructor(timeString)</h4>
 <h5 id="example-construct">example Construct</h5>
-<pre><code>new PartTime(&#39;*-10-12&#39;)
+<pre><code>new PartTime()
+new PartTime(&#39;*-10-12&#39;)
 new PartTime(&#39;1970-1-1&#39;)
 new PartTime(&#39;1970-1-1T00:*&#39;)
 new PartTime(&#39;*:00:00.000&#39;)
@@ -58,6 +59,16 @@ new PartTime(&#39;1970-1-1T00:00:00.000&#39;)
 </code></pre><h5 id="param">param</h5>
 <ul>
 <li><strong>timeString</strong> [String] String value representing a parttime. The string should be in a format recognized by the PartTime.parse() method (yyyy-mm-ddT00:00:00.000).</li>
+</ul>
+<h4 id="properties">properties</h4>
+<ul>
+<li>year</li>
+<li>month (1-12. not 0-11.)</li>
+<li>date</li>
+<li>hour</li>
+<li>minute</li>
+<li>second</li>
+<li>millisecond</li>
 </ul>
 <h4 id="parse-timestring-static-method-">parse(timeString) {static method}</h4><p>get parttime data from parttime string</p><h5 id="param">param</h5>
 <ul>
@@ -72,7 +83,7 @@ new PartTime(&#39;1970-1-1T00:00:00.000&#39;)
       </div>
     </div>
     <div id='footer'>
-  May 11, 14 21:50:15 by
+  May 11, 14 23:24:05 by
   <a href='https://github.com/coffeedoc/codo' title='CoffeeScript API documentation generator'>
     Codo
   </a>

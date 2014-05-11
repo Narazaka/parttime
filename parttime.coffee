@@ -4,6 +4,7 @@
 class PartTime
 	# make a parttime
 	# @example Construct
+	#   new PartTime()
 	#   new PartTime('*-10-12')
 	#   new PartTime('1970-1-1')
 	#   new PartTime('1970-1-1T00:*')
@@ -12,9 +13,24 @@ class PartTime
 	#   new PartTime('1970-1-1T00:00:00.000')
 	# @param timeString [String] String value representing a parttime. The string should be in a format recognized by the PartTime.parse() method (yyyy-mm-ddT00:00:00.000).
 	constructor: (timeString) ->
-		time = PartTime.parse timeString
-		for name, value of time
-			@[name] = value
+		if timeString?
+			time = PartTime.parse timeString
+			for name, value of time
+				@[name] = value
+	# @property [Integer] such as 2014
+	year: null
+	# @property [Integer] 1-12 (not 0-11)
+	month: null
+	# @property [Integer] 1-31
+	date: null
+	# @property [Integer] 0-24
+	hour: null
+	# @property [Integer] 0-59
+	minute: null
+	# @property [Integer] 0-59
+	second: null
+	# @property [Integer] 0-999
+	millisecond: null
 	# @nodoc
 	@_levels = ['millisecond', 'second', 'minute', 'hour', 'date', 'month', 'year']
 	# get parttime data from parttime string
@@ -70,7 +86,7 @@ class PartTime
 		parttime
 	# @return [Integer] the year
 	getFullYear: -> @year
-	# @return [Integer] the month
+	# @return [Integer] the month (0-11)
 	getMonth: -> if @month? then @month - 1
 	# @return [Integer] the date
 	getDate: -> @date

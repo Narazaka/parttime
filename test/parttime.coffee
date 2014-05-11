@@ -48,6 +48,17 @@ describe 'parser', ->
 		(-> PartTime.parse('12:*:45.*')).should.throw /two part/
 
 describe 'compare', ->
+	it 'should work with no arguments', ->
+		(-> p = new PartTime()).should.not.throw()
+	it 'should work with an argument', ->
+		pe = new PartTime()
+		pe.date = 1
+		pe.hour = 6
+		pe.minute = 30
+		pa = new PartTime('*-*-01T06:30')
+		(pa).should.be.deep.equal pe
+
+describe 'compare', ->
 	it 'date should work', ->
 		p = new PartTime '1970-01-01'
 		p.compare(new Date('1970-01-01')).should.be.equal 0

@@ -39,6 +39,86 @@
 </div>
 <div class='tags'>
 </div>
+      <h2>Property Summary</h2>
+      <dl class='properties'>
+        <dt id='year-property'>
+          <span class='signature'>
+            (Integer)
+            <b>
+              year
+            </b>
+          </span>
+        </dt>
+        <dd class='desc'>
+          such as 2014
+        </dd>
+        <dt id='month-property'>
+          <span class='signature'>
+            (Integer)
+            <b>
+              month
+            </b>
+          </span>
+        </dt>
+        <dd class='desc'>
+          1-12 (not 0-11)
+        </dd>
+        <dt id='date-property'>
+          <span class='signature'>
+            (Integer)
+            <b>
+              date
+            </b>
+          </span>
+        </dt>
+        <dd class='desc'>
+          1-31
+        </dd>
+        <dt id='hour-property'>
+          <span class='signature'>
+            (Integer)
+            <b>
+              hour
+            </b>
+          </span>
+        </dt>
+        <dd class='desc'>
+          0-24
+        </dd>
+        <dt id='minute-property'>
+          <span class='signature'>
+            (Integer)
+            <b>
+              minute
+            </b>
+          </span>
+        </dt>
+        <dd class='desc'>
+          0-59
+        </dd>
+        <dt id='second-property'>
+          <span class='signature'>
+            (Integer)
+            <b>
+              second
+            </b>
+          </span>
+        </dt>
+        <dd class='desc'>
+          0-59
+        </dd>
+        <dt id='millisecond-property'>
+          <span class='signature'>
+            (Integer)
+            <b>
+              millisecond
+            </b>
+          </span>
+        </dt>
+        <dd class='desc'>
+          0-999
+        </dd>
+      </dl>
       <h2>Class Method Summary</h2>
       <ul class='summary'>
   <li>
@@ -217,7 +297,8 @@
     <h4>
       Construct
     </h4>
-    <pre><code class='coffeescript'>new PartTime(&#39;*-10-12&#39;)
+    <pre><code class='coffeescript'>new PartTime()
+new PartTime(&#39;*-10-12&#39;)
 new PartTime(&#39;1970-1-1&#39;)
 new PartTime(&#39;1970-1-1T00:*&#39;)
 new PartTime(&#39;*:00:00.000&#39;)
@@ -281,7 +362,7 @@ new PartTime(&#39;1970-1-1T00:00:00.000&#39;)</code></pre>
         <tt>Integer</tt>
       )
       &mdash;
-      <span class='desc'>the month </span>
+      <span class='desc'>the month (0-11) </span>
     </li>
   </ul>
 </div>
@@ -452,7 +533,7 @@ new PartTime(&#39;1970-1-1T00:00:00.000&#39;)</code></pre>
 </div>
     </div>
     <div id='footer'>
-  May 11, 14 21:50:15 by
+  May 11, 14 23:24:05 by
   <a href='https://github.com/coffeedoc/codo' title='CoffeeScript API documentation generator'>
     Codo
   </a>

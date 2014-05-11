@@ -6,12 +6,28 @@ var PartTime;
 PartTime = (function() {
   function PartTime(timeString) {
     var name, time, value;
-    time = PartTime.parse(timeString);
-    for (name in time) {
-      value = time[name];
-      this[name] = value;
+    if (timeString != null) {
+      time = PartTime.parse(timeString);
+      for (name in time) {
+        value = time[name];
+        this[name] = value;
+      }
     }
   }
+
+  PartTime.prototype.year = null;
+
+  PartTime.prototype.month = null;
+
+  PartTime.prototype.date = null;
+
+  PartTime.prototype.hour = null;
+
+  PartTime.prototype.minute = null;
+
+  PartTime.prototype.second = null;
+
+  PartTime.prototype.millisecond = null;
 
   PartTime._levels = ['millisecond', 'second', 'minute', 'hour', 'date', 'month', 'year'];
 

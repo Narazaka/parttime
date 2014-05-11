@@ -42,6 +42,7 @@ SUMMARY
 
 ##### example Construct
 
+    new PartTime()
     new PartTime('*-10-12')
     new PartTime('1970-1-1')
     new PartTime('1970-1-1T00:*')
@@ -52,6 +53,16 @@ SUMMARY
 ##### param
 
 - **timeString** [String] String value representing a parttime. The string should be in a format recognized by the PartTime.parse() method (yyyy-mm-ddT00:00:00.000).
+
+#### properties
+
+- year
+- month (1-12. not 0-11.)
+- date
+- hour
+- minute
+- second
+- millisecond
 
 #### parse(timeString) {static method}
 
