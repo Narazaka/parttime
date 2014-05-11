@@ -133,52 +133,59 @@ PartTime = (function() {
   };
 
   PartTime.prototype.compare = function(date_c) {
-    var date, diff, hour, millisecond, minute, month, second, year;
+    var date, date_cmp, diff, hour, hour_cmp, millisecond, millisecond_cmp, minute, minute_cmp, month, month_cmp, second, second_cmp, year, year_cmp;
     year = this.getFullYear();
-    if (year != null) {
-      diff = year - date_c.getFullYear();
+    year_cmp = date_c.getFullYear();
+    if ((year != null) && (year_cmp != null)) {
+      diff = year - year_cmp;
       if (diff) {
         return diff;
       }
     }
     month = this.getMonth();
-    if (month != null) {
-      diff = month - date_c.getMonth();
+    month_cmp = date_c.getMonth();
+    if ((month != null) && (month_cmp != null)) {
+      diff = month - month_cmp;
       if (diff) {
         return diff;
       }
     }
     date = this.getDate();
-    if (date != null) {
-      diff = date - date_c.getDate();
+    date_cmp = date_c.getDate();
+    if ((date != null) && (date_cmp != null)) {
+      diff = date - date_cmp;
       if (diff) {
         return diff;
       }
     }
     hour = this.getHours();
-    if (hour != null) {
-      diff = hour - date_c.getHours();
+    hour_cmp = date_c.getHours();
+    if ((hour != null) && (hour_cmp != null)) {
+      diff = hour - hour_cmp;
       if (diff) {
         return diff;
       }
     }
     minute = this.getMinutes();
-    if (minute != null) {
-      diff = minute - date_c.getMinutes();
+    minute_cmp = date_c.getMinutes();
+    if ((minute != null) && (minute_cmp != null)) {
+      diff = minute - minute_cmp;
       if (diff) {
         return diff;
       }
     }
     second = this.getSeconds();
-    if (second != null) {
-      diff = second - date_c.getSeconds();
+    second_cmp = date_c.getSeconds();
+    if ((second != null) && (second_cmp != null)) {
+      diff = second - second_cmp;
       if (diff) {
         return diff;
       }
     }
     millisecond = this.getMilliseconds();
-    if (millisecond != null) {
-      diff = millisecond - date_c.getMilliseconds();
+    millisecond_cmp = date_c.getMilliseconds();
+    if ((millisecond != null) && (millisecond_cmp != null)) {
+      diff = millisecond - millisecond_cmp;
       if (diff) {
         return diff;
       }

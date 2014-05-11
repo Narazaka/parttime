@@ -103,32 +103,39 @@ class PartTime
 	# @return [Integer] if this < date then negative else if this > date then positive else 0
 	compare: (date_c) ->
 		year = @getFullYear()
-		if year?
-			diff = year - date_c.getFullYear()
+		year_cmp = date_c.getFullYear()
+		if year? and year_cmp?
+			diff = year - year_cmp
 			if diff then return diff
 		month = @getMonth()
-		if month?
-			diff = month - date_c.getMonth()
+		month_cmp = date_c.getMonth()
+		if month? and month_cmp?
+			diff = month - month_cmp
 			if diff then return diff
 		date = @getDate()
-		if date?
-			diff = date - date_c.getDate()
+		date_cmp = date_c.getDate()
+		if date? and date_cmp?
+			diff = date - date_cmp
 			if diff then return diff
 		hour = @getHours()
-		if hour?
-			diff = hour - date_c.getHours()
+		hour_cmp = date_c.getHours()
+		if hour? and hour_cmp?
+			diff = hour - hour_cmp
 			if diff then return diff
 		minute = @getMinutes()
-		if minute?
-			diff = minute - date_c.getMinutes()
+		minute_cmp = date_c.getMinutes()
+		if minute? and minute_cmp?
+			diff = minute - minute_cmp
 			if diff then return diff
 		second = @getSeconds()
-		if second?
-			diff = second - date_c.getSeconds()
+		second_cmp = date_c.getSeconds()
+		if second? and second_cmp?
+			diff = second - second_cmp
 			if diff then return diff
 		millisecond = @getMilliseconds()
-		if millisecond?
-			diff = millisecond - date_c.getMilliseconds()
+		millisecond_cmp = date_c.getMilliseconds()
+		if millisecond? and millisecond_cmp?
+			diff = millisecond - millisecond_cmp
 			if diff then return diff
 		return 0
 	# @nodoc
