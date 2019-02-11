@@ -63,73 +63,31 @@
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
-			<div class="tsd-panel tsd-typography">
-				<h1 id="parttime-time-with-placeholder">PartTime - time with placeholder</h1>
-				<h2 id="synopsys">SYNOPSYS</h2>
-				<pre><code><span class="hljs-keyword">var</span> PartTime = <span class="hljs-built_in">require</span>(<span class="hljs-string">'parttime'</span>);
-<span class="hljs-keyword">var</span> pt = <span class="hljs-keyword">new</span> PartTime(<span class="hljs-string">'*-01-01'</span>);
-<span class="hljs-keyword">var</span> now = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>();
-<span class="hljs-keyword">if</span>(pt.compare(now) == <span class="hljs-number">0</span>) <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Happy New Year!'</span>);</code></pre><h2 id="description">DESCRIPTION</h2>
-				<p>PartTime represents a single moment in time with placeholder that is useful for compareing repeating moment.</p>
-				<p>Currently, PartTime does not support timezones.</p>
-				<h2 id="install-usage">INSTALL &amp; USAGE</h2>
-				<h3 id="node-js">node.js</h3>
-				<pre><code>npm <span class="hljs-keyword">install</span> -g parttime</code></pre><p>and</p>
-				<pre><code><span class="hljs-attribute">var PartTime</span> = require(<span class="hljs-string">'parttime'</span>);</code></pre><h3 id="browsers">browsers</h3>
-				<p>Get parttime.js by downloading dist zip or some and</p>
-				<pre><code><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"parttime.js"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></pre><h2 id="summary">SUMMARY</h2>
-				<h3 id="class-parttime">class PartTime</h3>
-				<h4 id="constructor-timestring-">constructor(timeString)</h4>
-				<h5 id="example-construct">example Construct</h5>
-				<pre><code><span class="hljs-keyword">new</span> <span class="hljs-type">PartTime</span>()
-<span class="hljs-keyword">new</span> <span class="hljs-type">PartTime</span>(<span class="hljs-string">'*-10-12'</span>)
-<span class="hljs-keyword">new</span> <span class="hljs-type">PartTime</span>(<span class="hljs-string">'1970-1-1'</span>)
-<span class="hljs-keyword">new</span> <span class="hljs-type">PartTime</span>(<span class="hljs-string">'1970-1-1T00:*'</span>)
-<span class="hljs-keyword">new</span> <span class="hljs-type">PartTime</span>(<span class="hljs-string">'*:00:00.000'</span>)
-<span class="hljs-keyword">new</span> <span class="hljs-type">PartTime</span>(<span class="hljs-string">'*:*:30'</span>)
-<span class="hljs-keyword">new</span> <span class="hljs-type">PartTime</span>(<span class="hljs-string">'1970-1-1T00:00:00.000'</span>)</code></pre><h5 id="param">param</h5>
-				<ul>
-					<li><strong>timeString</strong> [String] String value representing a parttime. The string should be in a format recognized by the PartTime.parse() method (yyyy-mm-ddT00:00:00.000).</li>
-				</ul>
-				<h4 id="properties">properties</h4>
-				<ul>
-					<li>year</li>
-					<li>month (1-12. not 0-11.)</li>
-					<li>date</li>
-					<li>hour</li>
-					<li>minute</li>
-					<li>second</li>
-					<li>millisecond</li>
-				</ul>
-				<h4 id="parse-timestring-static-method-">parse(timeString) {static method}</h4>
-				<p>get parttime data from parttime string</p>
-				<h5 id="param">param</h5>
-				<ul>
-					<li><strong>timeString</strong> [String] String value representing a parttime. The string should be in a format yyyy-mm-ddT00:00:00.000.</li>
-				</ul>
-				<h5 id="return">return</h5>
-				<p>[Hash] Hash data representing parttime.</p>
-				<h4 id="compare-date_c-">compare(date_c)</h4>
-				<p>compare with DateLike</p>
-				<h5 id="param">param</h5>
-				<ul>
-					<li><strong>date_c</strong> [DateLike] Date or DateLike (has getFullYear, getMonth, ... getMilliseconds)</li>
-				</ul>
-				<h5 id="return">return</h5>
-				<p>[Integer] if this &lt; date then negative else if this &gt; date then positive else 0</p>
-				<h4 id="tostring-">toString()</h4>
-				<h5 id="return">return</h5>
-				<p>[String] yyyy-mm-ddT00:00:00.000.</p>
-				<h2 id="more-documentation">MORE DOCUMENTATION</h2>
-				<p>See doc/ or parttime.coffee comments.</p>
-				<h2 id="license">LICENSE</h2>
-				<p>(C) 2014 Narazaka : Licensed under <a href="http://narazaka.net/license/MIT?2014">The MIT License</a></p>
-			</div>
+			<section class="tsd-panel-group tsd-index-group">
+				<h2>Index</h2>
+				<section class="tsd-panel tsd-index-panel">
+					<div class="tsd-index-content">
+						<section class="tsd-index-section ">
+							<h3>Classes</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-class"><a href="classes/parttime.html" class="tsd-kind-icon">Part<wbr>Time</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section tsd-is-not-exported">
+							<h3>Interfaces</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-interface tsd-is-not-exported"><a href="interfaces/datelike.html" class="tsd-kind-icon">Date<wbr>Like</a></li>
+								<li class="tsd-kind-interface tsd-is-not-exported"><a href="interfaces/timeprops.html" class="tsd-kind-icon">Time<wbr>Props</a></li>
+							</ul>
+						</section>
+					</div>
+				</section>
+			</section>
 		</div>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
 			<nav class="tsd-navigation primary">
 				<ul>
-					<li class="globals  ">
+					<li class="globals current ">
 						<a href="globals.html"><em>Globals</em></a>
 					</li>
 				</ul>
