@@ -1,6 +1,6 @@
 (function(f){if(typeof exports==="object"&&typeof module!=="undefined"){module.exports=f()}else if(typeof define==="function"&&define.amd){define([],f)}else{var g;if(typeof window!=="undefined"){g=window}else if(typeof global!=="undefined"){g=global}else if(typeof self!=="undefined"){g=self}else{g=this}g.PartTime = f()}})(function(){var define,module,exports;module={exports:(exports={})};
 "use strict";
-/* (C) 2014 Narazaka : Licensed under The MIT License - http://narazaka.net/license/MIT?2014 */
+/* (C) 2019 Narazaka : Licensed under The MIT License - https://narazaka.net/license/Zlib?2019 */
 /** Creates a "PartTime" instance that represents a single moment in time with placeholder that is useful for compareing repeating moment. Currently, PartTime objects does not support timezones. */
 var PartTime = /** @class */ (function () {
     /**
