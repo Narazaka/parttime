@@ -1,4 +1,4 @@
-/* (C) 2014 Narazaka : Licensed under The MIT License - http://narazaka.net/license/MIT?2014 */
+/* (C) 2019 Narazaka : Licensed under The MIT License - https://narazaka.net/license/Zlib?2019 */
 
 interface TimeProps {
 	/** such as 2014 */

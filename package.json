@@ -31,7 +31,7 @@
 		"name": "narazaka",
 		"url": "https://narazaka.net/"
 	},
-	"license": "MIT",
+	"license": "Zlib",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/Narazaka/parttime.git"
