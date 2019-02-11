@@ -70,74 +70,37 @@
 				<pre><code class="language-javascript"><span class="hljs-keyword">var</span> PartTime = <span class="hljs-built_in">require</span>(<span class="hljs-string">"parttime"</span>);
 <span class="hljs-keyword">var</span> parttime = <span class="hljs-keyword">new</span> PartTime(<span class="hljs-string">"*-01-01"</span>);
 <span class="hljs-keyword">var</span> now = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>();
-<span class="hljs-keyword">if</span> (parttime.compare(now) == <span class="hljs-number">0</span>) <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Happy New Year!'</span>);</code></pre>
+<span class="hljs-keyword">if</span> (parttime.compare(now) == <span class="hljs-number">0</span>) <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"Happy New Year!"</span>);</code></pre>
 				<p>TypeScript:</p>
 				<pre><code class="language-typescript"><span class="hljs-keyword">import</span> PartTime = <span class="hljs-built_in">require</span>(<span class="hljs-string">"parttime"</span>);
 <span class="hljs-keyword">const</span> parttime = <span class="hljs-keyword">new</span> PartTime(<span class="hljs-string">"*-01-01"</span>);
 <span class="hljs-keyword">const</span> now = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>();
-<span class="hljs-keyword">if</span> (parttime.compare(now) == <span class="hljs-number">0</span>) <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Happy New Year!'</span>);</code></pre>
+<span class="hljs-keyword">if</span> (parttime.compare(now) == <span class="hljs-number">0</span>) <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"Happy New Year!"</span>);</code></pre>
 				<p>In browser:</p>
 				<pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"parttime.js"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
 <span class="hljs-keyword">var</span> parttime = <span class="hljs-keyword">new</span> PartTime(<span class="hljs-string">"*-01-01"</span>);
 <span class="hljs-keyword">var</span> now = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>();
-<span class="hljs-keyword">if</span> (parttime.compare(now) == <span class="hljs-number">0</span>) <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Happy New Year!'</span>);
+<span class="hljs-keyword">if</span> (parttime.compare(now) == <span class="hljs-number">0</span>) <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"Happy New Year!"</span>);
 </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></pre>
 				<h2 id="description">DESCRIPTION</h2>
 				<p>PartTime represents a single moment in time with placeholder that is useful for compareing repeating moment.</p>
 				<p>Currently, PartTime does not support timezones.</p>
-				<h2 id="install-usage">INSTALL &amp; USAGE</h2>
+				<pre><code class="language-typescript"><span class="hljs-keyword">new</span> PartTime()
+<span class="hljs-keyword">new</span> PartTime(<span class="hljs-string">"*-10-12"</span>)
+<span class="hljs-keyword">new</span> PartTime(<span class="hljs-string">"1970-1-1"</span>)
+<span class="hljs-keyword">new</span> PartTime(<span class="hljs-string">"1970-1-1T00:*"</span>)
+<span class="hljs-keyword">new</span> PartTime(<span class="hljs-string">"*:00:00.000"</span>)
+<span class="hljs-keyword">new</span> PartTime(<span class="hljs-string">"*:*:30"</span>)
+<span class="hljs-keyword">new</span> PartTime(<span class="hljs-string">"1970-1-1T00:00:00.000"</span>)</code></pre>
+				<h2 id="install">INSTALL</h2>
 				<h3 id="node-js">node.js</h3>
 				<pre><code>npm <span class="hljs-keyword">install</span> -g parttime</code></pre><h3 id="browsers">browsers</h3>
 				<p>Get parttime.js by downloading dist zip or some and</p>
-				<pre><code><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"parttime.js"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></pre><h2 id="summary">SUMMARY</h2>
-				<h3 id="class-parttime">class PartTime</h3>
-				<h4 id="constructor-timestring-">constructor(timeString)</h4>
-				<h5 id="example-construct">example Construct</h5>
-				<pre><code class="language-typescript"><span class="hljs-keyword">new</span> PartTime()
-<span class="hljs-keyword">new</span> PartTime(<span class="hljs-string">'*-10-12'</span>)
-<span class="hljs-keyword">new</span> PartTime(<span class="hljs-string">'1970-1-1'</span>)
-<span class="hljs-keyword">new</span> PartTime(<span class="hljs-string">'1970-1-1T00:*'</span>)
-<span class="hljs-keyword">new</span> PartTime(<span class="hljs-string">'*:00:00.000'</span>)
-<span class="hljs-keyword">new</span> PartTime(<span class="hljs-string">'*:*:30'</span>)
-<span class="hljs-keyword">new</span> PartTime(<span class="hljs-string">'1970-1-1T00:00:00.000'</span>)</code></pre>
-				<h5 id="param">param</h5>
-				<ul>
-					<li><strong>timeString</strong> [String] String value representing a parttime. The string should be in a format recognized by the PartTime.parse() method (yyyy-mm-ddT00:00:00.000).</li>
-				</ul>
-				<h4 id="properties">properties</h4>
-				<ul>
-					<li>year</li>
-					<li>month (1-12. not 0-11.)</li>
-					<li>date</li>
-					<li>hour</li>
-					<li>minute</li>
-					<li>second</li>
-					<li>millisecond</li>
-				</ul>
-				<h4 id="parse-timestring-static-method-">parse(timeString) {static method}</h4>
-				<p>get parttime data from parttime string</p>
-				<h5 id="param">param</h5>
-				<ul>
-					<li><strong>timeString</strong> [String] String value representing a parttime. The string should be in a format yyyy-mm-ddT00:00:00.000.</li>
-				</ul>
-				<h5 id="return">return</h5>
-				<p>[Hash] Hash data representing parttime.</p>
-				<h4 id="compare-date_c-">compare(date_c)</h4>
-				<p>compare with DateLike</p>
-				<h5 id="param">param</h5>
-				<ul>
-					<li><strong>date_c</strong> [DateLike] Date or DateLike (has getFullYear, getMonth, ... getMilliseconds)</li>
-				</ul>
-				<h5 id="return">return</h5>
-				<p>[Integer] if this &lt; date then negative else if this &gt; date then positive else 0</p>
-				<h4 id="tostring-">toString()</h4>
-				<h5 id="return">return</h5>
-				<p>[String] yyyy-mm-ddT00:00:00.000.</p>
-				<h2 id="more-documentation">MORE DOCUMENTATION</h2>
-				<p>See doc/ or parttime.coffee comments.</p>
+				<pre><code><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"parttime.js"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></pre><h2 id="api-document">API Document</h2>
+				<p><a href="https://narazaka.github.io/parttime/">API Document</a></p>
 				<h2 id="license">LICENSE</h2>
-				<p>(C) 2014 Narazaka : Licensed under <a href="http://narazaka.net/license/MIT?2014">The MIT License</a></p>
+				<p>(C) 2019 Narazaka : Licensed under <a href="https://narazaka.net/license/Zlib?2019">Zlib License</a></p>
 			</div>
 		</div>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
