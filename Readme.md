@@ -1,6 +1,16 @@
 PartTime - time with placeholder
 ================================
 
+[![npm](https://img.shields.io/npm/v/parttime.svg)](https://www.npmjs.com/package/parttime)
+[![npm license](https://img.shields.io/npm/l/parttime.svg)](https://www.npmjs.com/package/parttime)
+[![npm download total](https://img.shields.io/npm/dt/parttime.svg)](https://www.npmjs.com/package/parttime)
+[![npm download by month](https://img.shields.io/npm/dm/parttime.svg)](https://www.npmjs.com/package/parttime)
+[![npm type definitions](https://img.shields.io/npm/types/parttime.svg)](https://www.npmjs.com/package/parttime)
+
+[![Dependency Status](https://david-dm.org/Narazaka/parttime/status.svg)](https://david-dm.org/Narazaka/parttime)
+[![devDependency Status](https://david-dm.org/Narazaka/parttime/dev-status.svg)](https://david-dm.org/Narazaka/parttime?type=dev)
+[![Travis Build Status](https://travis-ci.org/Narazaka/parttime.svg?branch=master)](https://travis-ci.org/Narazaka/parttime)
+
 SYNOPSYS
 --------------------------------
 
