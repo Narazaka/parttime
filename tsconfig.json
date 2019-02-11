@@ -1,0 +1,16 @@
+{
+    "compilerOptions": {
+        "target": "es5",
+        "module": "commonjs",
+        "declaration": true,
+        "forceConsistentCasingInFileNames": true,
+        "newLine": "LF",
+        "strict": true,
+        "noImplicitReturns": true,
+        "noUnusedLocals": true,
+        "noUnusedParameters": true
+    },
+    "exclude": [
+        "node_modules"
+    ]
+}

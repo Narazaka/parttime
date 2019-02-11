@@ -3,14 +3,33 @@
 	"version": "0.0.6",
 	"description": "PartTime - time with placeholder",
 	"main": "parttime.js",
+	"types": "parttime.d.ts",
 	"scripts": {
-		"test": "mocha"
+		"prepare": "npm run dist",
+		"prepublishOnly": "npm test",
+		"dist": "npm-run-all dist:ts dist:umd dist:mv",
+		"dist:ts": "tsc",
+		"dist:umd": "umd -c PartTime parttime.js parttime.umd.js",
+		"dist:mv": "shx mv parttime.umd.js parttime.js",
+		"test": "mocha",
+		"doc": "npm-run-all doc:clean doc:dist",
+		"doc:dist": "typedoc parttime.ts --out doc --mode file --disableOutputCheck",
+		"doc:clean": "rimraf doc"
 	},
-	"dependencies": {
+	"devDependencies": {
+		"chai": "^4.2.0",
+		"coffee-script": "1.10.0",
+		"mocha": "^5.2.0",
+		"npm-run-all": "^4.1.5",
+		"rimraf": "^2.6.3",
+		"shx": "^0.3.2",
+		"typedoc": "^0.14.2",
+		"typescript": "^3.3.3",
+		"umd": "^3.0.3"
 	},
 	"author": {
 		"name": "narazaka",
-		"url": "http://narazaka.net/"
+		"url": "https://narazaka.net/"
 	},
 	"license": "MIT",
 	"repository": {
