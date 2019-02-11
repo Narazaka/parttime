@@ -13,8 +13,8 @@
 		"dist:mv": "shx mv parttime.umd.js parttime.js",
 		"test": "mocha",
 		"doc": "npm-run-all doc:clean doc:dist",
-		"doc:dist": "typedoc parttime.ts --out doc --mode file --disableOutputCheck",
-		"doc:clean": "rimraf doc"
+		"doc:dist": "typedoc parttime.ts --out docs --mode file --disableOutputCheck",
+		"doc:clean": "rimraf docs"
 	},
 	"devDependencies": {
 		"chai": "^4.2.0",
