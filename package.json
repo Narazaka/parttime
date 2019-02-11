@@ -4,6 +4,10 @@
 	"description": "PartTime - time with placeholder",
 	"main": "parttime.js",
 	"types": "parttime.d.ts",
+	"files": [
+		"parttime.js",
+		"parttime.d.ts"
+	],
 	"scripts": {
 		"prepare": "npm run dist",
 		"prepublishOnly": "npm test",
