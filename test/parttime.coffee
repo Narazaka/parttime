@@ -62,8 +62,11 @@ describe 'compare', ->
 	it 'date should work', ->
 		p = new PartTime '1970-01-01'
 		p.compare(new Date('1970-01-01')).should.be.equal 0
+		p.compare({year: 1970, month: 1, date: 1}).should.be.equal 0
 		p.compare(new Date('1970-01-02')).should.be.below 0
+		p.compare({year: 1970, month: 1, date: 2}).should.be.below 0
 		p.compare(new Date('1970-01-01T06:00:00')).should.be.equal 0
+		p.compare({year: 1970, month: 1, date: 1, hour: 6, minute: 0, second: 0}).should.be.equal 0
 	it 'date should work', ->
 		p = new PartTime '*-01-01'
 		p.compare(new Date('1970-01-01')).should.be.equal 0

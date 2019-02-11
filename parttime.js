@@ -119,59 +119,69 @@ var PartTime = /** @class */ (function () {
      * compare with DateLike
      *
      * if this < date then negative else if this > date then positive else 0
-     * @param date_c Date or DateLike (has getFullYear, getMonth, ... getMilliseconds)
+     * @param date_c Date, DateLike (has getFullYear, getMonth, ... getMilliseconds) or TimeProps
      */
     PartTime.prototype.compare = function (date_c) {
-        var year = this.getFullYear();
-        var year_cmp = date_c.getFullYear();
+        return PartTime.compare(this, date_c);
+    };
+    /**
+     * compare with DateLike
+     *
+     * if date1 < date2 then negative else if date1 > date2 then positive else 0
+     * @param date1 Date, DateLike (has getFullYear, getMonth, ... getMilliseconds) or TimeProps
+     * @param date2 Date, DateLike (has getFullYear, getMonth, ... getMilliseconds) or TimeProps
+     */
+    PartTime.compare = function (date1, date2) {
+        var year = "getFullYear" in date1 ? date1.getFullYear() : date1.year;
+        var year_cmp = "getFullYear" in date2 ? date2.getFullYear() : date2.year;
         if ((year != null) && (year_cmp != null)) {
             var diff = year - year_cmp;
             if (diff) {
                 return diff;
             }
         }
-        var month = this.getMonth();
-        var month_cmp = date_c.getMonth();
+        var month = "getMonth" in date1 ? date1.getMonth() : (date1.month ? date1.month - 1 : date1.month);
+        var month_cmp = "getMonth" in date2 ? date2.getMonth() : (date2.month ? date2.month - 1 : date2.month);
         if ((month != null) && (month_cmp != null)) {
             var diff = month - month_cmp;
             if (diff) {
                 return diff;
             }
         }
-        var date = this.getDate();
-        var date_cmp = date_c.getDate();
+        var date = "getDate" in date1 ? date1.getDate() : date1.date;
+        var date_cmp = "getDate" in date2 ? date2.getDate() : date2.date;
         if ((date != null) && (date_cmp != null)) {
             var diff = date - date_cmp;
             if (diff) {
                 return diff;
             }
         }
-        var hour = this.getHours();
-        var hour_cmp = date_c.getHours();
+        var hour = "getHours" in date1 ? date1.getHours() : date1.hour;
+        var hour_cmp = "getHours" in date2 ? date2.getHours() : date2.hour;
         if ((hour != null) && (hour_cmp != null)) {
             var diff = hour - hour_cmp;
             if (diff) {
                 return diff;
             }
         }
-        var minute = this.getMinutes();
-        var minute_cmp = date_c.getMinutes();
+        var minute = "getMinutes" in date1 ? date1.getMinutes() : date1.minute;
+        var minute_cmp = "getMinutes" in date2 ? date2.getMinutes() : date2.minute;
         if ((minute != null) && (minute_cmp != null)) {
             var diff = minute - minute_cmp;
             if (diff) {
                 return diff;
             }
         }
-        var second = this.getSeconds();
-        var second_cmp = date_c.getSeconds();
+        var second = "getSeconds" in date1 ? date1.getSeconds() : date1.second;
+        var second_cmp = "getSeconds" in date2 ? date2.getSeconds() : date2.second;
         if ((second != null) && (second_cmp != null)) {
             var diff = second - second_cmp;
             if (diff) {
                 return diff;
             }
         }
-        var millisecond = this.getMilliseconds();
-        var millisecond_cmp = date_c.getMilliseconds();
+        var millisecond = "getMilliseconds" in date1 ? date1.getMilliseconds() : date1.millisecond;
+        var millisecond_cmp = "getMilliseconds" in date2 ? date2.getMilliseconds() : date2.millisecond;
         if ((millisecond != null) && (millisecond_cmp != null)) {
             var diff = millisecond - millisecond_cmp;
             if (diff) {
