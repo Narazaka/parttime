@@ -194,7 +194,15 @@ class PartTime implements PartTime.TimeProps, PartTime.DateLike {
 	private elementToString(element?: number, padding = 0) { return element != null ? (Array(padding + 1).join("0") + element).slice(-padding) : "*" }
 	/** @return yyyy-mm-ddT00:00:00.000. */
 	toString() {
-		return `${this.elementToString(this.year)}-${this.elementToString(this.month, 2)}-${this.elementToString(this.date, 2)}T${this.elementToString(this.hour, 2)}:${this.elementToString(this.minute, 2)}:${this.elementToString(this.second, 2)}.${this.elementToString(this.millisecond, 3)}`;
+		return `${this.toDateString()}T${this.toTimeString()}`;
+	}
+	/** @return yyyy-mm-dd. */
+	toDateString() {
+		return `${this.elementToString(this.year)}-${this.elementToString(this.month, 2)}-${this.elementToString(this.date, 2)}`;
+	}
+	/** @return 00:00:00.000. */
+	toTimeString() {
+		return `${this.elementToString(this.hour, 2)}:${this.elementToString(this.minute, 2)}:${this.elementToString(this.second, 2)}.${this.elementToString(this.millisecond, 3)}`;
 	}
 }
 

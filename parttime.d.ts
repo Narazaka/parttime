@@ -67,6 +67,10 @@ declare class PartTime implements PartTime.TimeProps, PartTime.DateLike {
     private elementToString;
     /** @return yyyy-mm-ddT00:00:00.000. */
     toString(): string;
+    /** @return yyyy-mm-dd. */
+    toDateString(): string;
+    /** @return 00:00:00.000. */
+    toTimeString(): string;
 }
 declare namespace PartTime {
     interface TimeProps {

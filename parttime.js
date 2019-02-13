@@ -197,7 +197,15 @@ var PartTime = /** @class */ (function () {
     };
     /** @return yyyy-mm-ddT00:00:00.000. */
     PartTime.prototype.toString = function () {
-        return this.elementToString(this.year) + "-" + this.elementToString(this.month, 2) + "-" + this.elementToString(this.date, 2) + "T" + this.elementToString(this.hour, 2) + ":" + this.elementToString(this.minute, 2) + ":" + this.elementToString(this.second, 2) + "." + this.elementToString(this.millisecond, 3);
+        return this.toDateString() + "T" + this.toTimeString();
+    };
+    /** @return yyyy-mm-dd. */
+    PartTime.prototype.toDateString = function () {
+        return this.elementToString(this.year) + "-" + this.elementToString(this.month, 2) + "-" + this.elementToString(this.date, 2);
+    };
+    /** @return 00:00:00.000. */
+    PartTime.prototype.toTimeString = function () {
+        return this.elementToString(this.hour, 2) + ":" + this.elementToString(this.minute, 2) + ":" + this.elementToString(this.second, 2) + "." + this.elementToString(this.millisecond, 3);
     };
     PartTime._levels = ["millisecond", "second", "minute", "hour", "date", "month", "year"];
     return PartTime;
