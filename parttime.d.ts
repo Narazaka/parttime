@@ -11,9 +11,9 @@ declare class PartTime implements PartTime.TimeProps, PartTime.DateLike {
      * new PartTime("*:*:30")
      * new PartTime("1970-1-1T00:00:00.000")
      * ```
-     * @param timeString String value representing a parttime. The string should be in a format recognized by the PartTime.parse() method (yyyy-mm-ddT00:00:00.000).
+     * @param time String value representing a parttime. The string should be in a format recognized by the PartTime.parse() method (yyyy-mm-ddT00:00:00.000).
      */
-    constructor(timeString?: string);
+    constructor(time?: string | PartTime.TimeProps);
     /** such as 2014 */
     year?: number;
     /** 1-12 (not 0-11) */

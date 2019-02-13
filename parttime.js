@@ -14,11 +14,12 @@ var PartTime = /** @class */ (function () {
      * new PartTime("*:*:30")
      * new PartTime("1970-1-1T00:00:00.000")
      * ```
-     * @param timeString String value representing a parttime. The string should be in a format recognized by the PartTime.parse() method (yyyy-mm-ddT00:00:00.000).
+     * @param time String value representing a parttime. The string should be in a format recognized by the PartTime.parse() method (yyyy-mm-ddT00:00:00.000).
      */
-    function PartTime(timeString) {
-        if (timeString) {
-            var time = PartTime.parse(timeString);
+    function PartTime(time) {
+        if (time) {
+            if (typeof time === "string")
+                time = PartTime.parse(time);
             for (var _i = 0, _a = Object.keys(time); _i < _a.length; _i++) {
                 var name_1 = _a[_i];
                 this[name_1] = time[name_1];

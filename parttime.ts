@@ -13,11 +13,11 @@ class PartTime implements PartTime.TimeProps, PartTime.DateLike {
 	 * new PartTime("*:*:30")
 	 * new PartTime("1970-1-1T00:00:00.000")
 	 * ```
-	 * @param timeString String value representing a parttime. The string should be in a format recognized by the PartTime.parse() method (yyyy-mm-ddT00:00:00.000).
+	 * @param time String value representing a parttime. The string should be in a format recognized by the PartTime.parse() method (yyyy-mm-ddT00:00:00.000).
 	 */
-	constructor(timeString?: string) {
-		if (timeString) {
-			const time = PartTime.parse(timeString);
+	constructor(time?: string | PartTime.TimeProps) {
+		if (time) {
+			if (typeof time === "string") time = PartTime.parse(time);
 			for (const name of Object.keys(time) as Array<keyof PartTime.TimeProps>) {
 				this[name] = time[name];
 			}
