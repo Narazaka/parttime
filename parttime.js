@@ -126,6 +126,14 @@ var PartTime = /** @class */ (function () {
         return PartTime.compare(this, date_c);
     };
     /**
+     * equals with DateLike
+     *
+     * @param date_c Date, DateLike (has getFullYear, getMonth, ... getMilliseconds) or TimeProps
+     */
+    PartTime.prototype.equals = function (date_c) {
+        return PartTime.equals(this, date_c);
+    };
+    /**
      * compare with DateLike
      *
      * if date1 < date2 then negative else if date1 > date2 then positive else 0
@@ -191,6 +199,43 @@ var PartTime = /** @class */ (function () {
         }
         return 0;
     };
+    /**
+     * equals with DateLike
+     *
+     * @param date1 Date, DateLike (has getFullYear, getMonth, ... getMilliseconds) or TimeProps
+     * @param date2 Date, DateLike (has getFullYear, getMonth, ... getMilliseconds) or TimeProps
+     */
+    PartTime.equals = function (date1, date2) {
+        var year = "getFullYear" in date1 ? date1.getFullYear() : date1.year;
+        var year_cmp = "getFullYear" in date2 ? date2.getFullYear() : date2.year;
+        if (!valueEquals(year, year_cmp))
+            return false;
+        var month = "getMonth" in date1 ? date1.getMonth() : (date1.month ? date1.month - 1 : date1.month);
+        var month_cmp = "getMonth" in date2 ? date2.getMonth() : (date2.month ? date2.month - 1 : date2.month);
+        if (!valueEquals(month, month_cmp))
+            return false;
+        var date = "getDate" in date1 ? date1.getDate() : date1.date;
+        var date_cmp = "getDate" in date2 ? date2.getDate() : date2.date;
+        if (!valueEquals(date, date_cmp))
+            return false;
+        var hour = "getHours" in date1 ? date1.getHours() : date1.hour;
+        var hour_cmp = "getHours" in date2 ? date2.getHours() : date2.hour;
+        if (!valueEquals(hour, hour_cmp))
+            return false;
+        var minute = "getMinutes" in date1 ? date1.getMinutes() : date1.minute;
+        var minute_cmp = "getMinutes" in date2 ? date2.getMinutes() : date2.minute;
+        if (!valueEquals(minute, minute_cmp))
+            return false;
+        var second = "getSeconds" in date1 ? date1.getSeconds() : date1.second;
+        var second_cmp = "getSeconds" in date2 ? date2.getSeconds() : date2.second;
+        if (!valueEquals(second, second_cmp))
+            return false;
+        var millisecond = "getMilliseconds" in date1 ? date1.getMilliseconds() : date1.millisecond;
+        var millisecond_cmp = "getMilliseconds" in date2 ? date2.getMilliseconds() : date2.millisecond;
+        if (!valueEquals(millisecond, millisecond_cmp))
+            return false;
+        return true;
+    };
     PartTime.prototype.elementToString = function (element, padding) {
         if (padding === void 0) { padding = 0; }
         return element != null ? (Array(padding + 1).join("0") + element).slice(-padding) : "*";
@@ -210,6 +255,15 @@ var PartTime = /** @class */ (function () {
     PartTime._levels = ["millisecond", "second", "minute", "hour", "date", "month", "year"];
     return PartTime;
 }());
+function valueEquals(value1, value2) {
+    var n1 = value1 == null;
+    var n2 = value2 == null;
+    if (n1 !== n2)
+        return false; // single null
+    if (n1)
+        return true; // both null
+    return value1 === value2; // both not null
+}
 module.exports = PartTime;
 
 return module.exports;});

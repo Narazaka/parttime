@@ -57,6 +57,12 @@ declare class PartTime implements PartTime.TimeProps, PartTime.DateLike {
      */
     compare(date_c: PartTime.DateLike | PartTime.TimeProps): number;
     /**
+     * equals with DateLike
+     *
+     * @param date_c Date, DateLike (has getFullYear, getMonth, ... getMilliseconds) or TimeProps
+     */
+    equals(date_c: PartTime.DateLike | PartTime.TimeProps): boolean;
+    /**
      * compare with DateLike
      *
      * if date1 < date2 then negative else if date1 > date2 then positive else 0
@@ -64,6 +70,13 @@ declare class PartTime implements PartTime.TimeProps, PartTime.DateLike {
      * @param date2 Date, DateLike (has getFullYear, getMonth, ... getMilliseconds) or TimeProps
      */
     static compare(date1: PartTime.DateLike | PartTime.TimeProps, date2: PartTime.DateLike | PartTime.TimeProps): number;
+    /**
+     * equals with DateLike
+     *
+     * @param date1 Date, DateLike (has getFullYear, getMonth, ... getMilliseconds) or TimeProps
+     * @param date2 Date, DateLike (has getFullYear, getMonth, ... getMilliseconds) or TimeProps
+     */
+    static equals(date1: PartTime.DateLike | PartTime.TimeProps, date2: PartTime.DateLike | PartTime.TimeProps): boolean;
     private elementToString;
     /** @return yyyy-mm-ddT00:00:00.000. */
     toString(): string;

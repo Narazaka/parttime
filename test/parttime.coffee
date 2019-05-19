@@ -97,6 +97,29 @@ describe 'compare', ->
 		p.compare(new Date('1970-01-01')).should.be.equal 0
 		p.compare(new Date('1970-01-01T06:00:00')).should.be.equal 0
 
+describe 'equals', ->
+	it 'date should work', ->
+		p = new PartTime '1970-01-01'
+		p.equals(new Date('1970-01-01')).should.be.false
+		p.equals(new Date('1970-01-01T06:00:00')).should.be.false
+		p.equals({year: 1970, month: 1, date: 1}).should.be.true
+		p.equals({year: 1970, month: 1, date: 1, hour: null}).should.be.true
+		p.equals({year: 1970, month: 1, date: 1, hour: undefined}).should.be.true
+		p.equals({year: 1970, month: 1, date: 2}).should.be.false
+		p.equals({year: 1970, month: 1}).should.be.false
+		p.equals({year: 1970, month: 1, date: 1, hour: 6, minute: 0, second: 0}).should.be.false
+	it 'time should work', ->
+		p = new PartTime '02:09'
+		p.equals(new Date("1970-01-01T02:09:00#{tzs}")).should.be.false
+		p.equals({hour: 2, minute: 9}).should.be.true
+		p.equals({hour: 2, minute: 10}).should.be.false
+	it 'datetime should work', ->
+		p = new PartTime '1970-01-01T06:00:00'
+		p.equals(new Date("1970-01-01T06:00:00#{tzs}")).should.be.false
+	it 'datetime should work', ->
+		p = new PartTime '1970-01-01T06:00:00.0'
+		p.equals(new Date("1970-01-01T06:00:00#{tzs}")).should.be.true
+
 describe 'toString', ->
 	it 'should work', ->
 		(new PartTime('10:02:0.999')).toString().should.be.equal '*-*-*T10:02:00.999'

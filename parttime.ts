@@ -126,6 +126,14 @@ class PartTime implements PartTime.TimeProps, PartTime.DateLike {
 		return PartTime.compare(this, date_c);
 	}
 	/**
+	 * equals with DateLike
+	 *
+	 * @param date_c Date, DateLike (has getFullYear, getMonth, ... getMilliseconds) or TimeProps
+	 */
+	equals(date_c: PartTime.DateLike | PartTime.TimeProps) {
+		return PartTime.equals(this, date_c);
+	}
+	/**
 	 * compare with DateLike
 	 *
 	 * if date1 < date2 then negative else if date1 > date2 then positive else 0
@@ -191,6 +199,36 @@ class PartTime implements PartTime.TimeProps, PartTime.DateLike {
         }
         return 0;
     }
+	/**
+	 * equals with DateLike
+	 *
+	 * @param date1 Date, DateLike (has getFullYear, getMonth, ... getMilliseconds) or TimeProps
+	 * @param date2 Date, DateLike (has getFullYear, getMonth, ... getMilliseconds) or TimeProps
+	 */
+	static equals(date1: PartTime.DateLike | PartTime.TimeProps, date2: PartTime.DateLike | PartTime.TimeProps) {
+        const year = "getFullYear" in date1 ? date1.getFullYear() : date1.year;
+        const year_cmp = "getFullYear" in date2 ? date2.getFullYear() : date2.year;
+        if (!valueEquals(year, year_cmp)) return false;
+        const month = "getMonth" in date1 ? date1.getMonth() : (date1.month ? date1.month - 1 : date1.month);
+        const month_cmp = "getMonth" in date2 ? date2.getMonth() : (date2.month ? date2.month - 1 : date2.month);
+        if (!valueEquals(month, month_cmp)) return false;
+        const date = "getDate" in date1 ? date1.getDate() : date1.date;
+        const date_cmp = "getDate" in date2 ? date2.getDate() : date2.date;
+        if (!valueEquals(date, date_cmp)) return false;
+        const hour = "getHours" in date1 ? date1.getHours() : date1.hour;
+		const hour_cmp = "getHours" in date2 ? date2.getHours() : date2.hour;
+        if (!valueEquals(hour, hour_cmp)) return false;
+        const minute = "getMinutes" in date1 ? date1.getMinutes() : date1.minute;
+        const minute_cmp = "getMinutes" in date2 ? date2.getMinutes() : date2.minute;
+        if (!valueEquals(minute, minute_cmp)) return false;
+        const second = "getSeconds" in date1 ? date1.getSeconds() : date1.second;
+        const second_cmp = "getSeconds" in date2 ? date2.getSeconds() : date2.second;
+        if (!valueEquals(second, second_cmp)) return false;
+        const millisecond = "getMilliseconds" in date1 ? date1.getMilliseconds() : date1.millisecond;
+		const millisecond_cmp = "getMilliseconds" in date2 ? date2.getMilliseconds() : date2.millisecond;
+        if (!valueEquals(millisecond, millisecond_cmp)) return false;
+        return true;
+	}
 	private elementToString(element?: number, padding = 0) { return element != null ? (Array(padding + 1).join("0") + element).slice(-padding) : "*" }
 	/** @return yyyy-mm-ddT00:00:00.000. */
 	toString() {
@@ -204,6 +242,14 @@ class PartTime implements PartTime.TimeProps, PartTime.DateLike {
 	toTimeString() {
 		return `${this.elementToString(this.hour, 2)}:${this.elementToString(this.minute, 2)}:${this.elementToString(this.second, 2)}.${this.elementToString(this.millisecond, 3)}`;
 	}
+}
+
+function valueEquals(value1: number | undefined, value2: number | undefined) {
+	const n1 = value1 == null;
+	const n2 = value2 == null;
+	if (n1 !== n2) return false; // single null
+	if (n1) return true; // both null
+	return value1 === value2; // both not null
 }
 
 namespace PartTime {
