@@ -1,6 +1,6 @@
 {
 	"name": "parttime",
-	"version": "1.3.0",
+	"version": "1.4.0",
 	"description": "PartTime - time with placeholder",
 	"main": "parttime.js",
 	"types": "parttime.d.ts",
